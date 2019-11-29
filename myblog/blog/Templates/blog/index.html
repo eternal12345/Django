@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="utf-8"> 
+    <title>Title</title> 
+</head>
+<body>
+<style>
+body
+{
+	background-color:#87CEEB;
+}
+h1
+{color:red}
+</style>
+<h1><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 个人主页</strong></h1>
+<br>
+
+<h2>
+    &nbsp;&nbsp;<a  href="{% url 'blog:edit_page'  0  %}">新建博客</a>
+</h2>
+
+
+
+<br>
+
+<ul>
+{% for article in articles %}
+    <li>&nbsp;&nbsp;<a href="/blog/{{article.id}}">{{ article.title}}</a> <div style="text-align:center;">内容{{ article.content}}</div></li>
+
+	<br/>
+{% endfor %}
+</ul>
+<br>
+<br>
+<br>
+<br>
+
+
+<tr>
+  <div class="text" style=" text-align:center;">&copy;CopyRight 2018 Adam Nick AllRights Reserved</div>
+  </tr>
+
+</body>
+</html>

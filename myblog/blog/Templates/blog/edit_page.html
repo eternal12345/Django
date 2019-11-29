@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+</head>
+<body>
+<style>
+body
+{
+	background-color:#87CEEB;
+}
+h1
+{color:red}
+</style>
+
+<h1><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新建博客</strong></h1>
+<form  action=  "{% url 'blog:edit_action' %}" method="post">
+    {% csrf_token %}
+
+        <input type="hidden" name="article_id"  value="{{ article.id | default:'0'}}"/>
+        <label>&nbsp;&nbsp;文章标题
+        <input type="text" name="title" style="width:1000px; height:50px"value="{{ article.title}}"/>
+        </label>
+        <br/>
+        <label>&nbsp;&nbsp;文章内容
+        <input type="text" name="content" style="width:1000px; height:700px" value="{{ article.content}}"/>
+
+        </label>
+        <br/>
+
+    <input type="submit", value="提交">
+
+
+
+
+
+
+
+</form>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<tr>
+  <div class="text" style=" text-align:center;">&copy;CopyRight 2018 Adam Nick AllRights Reserved</div>
+  </tr>
+</body>
+</html>
